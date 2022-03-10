@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Login from './components/Login';
+import LoginStatus from './components/LoginStatus';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+         <h1>Context App</h1>
+        <AuthProvider>
+          {/* These components have access to isAuthenticated and Username */}
+          {/* These are the children below */}
+          <Login />
+          <LoginStatus />
+        </AuthProvider>
+   
+  
     </div>
   );
 }
